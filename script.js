@@ -7,14 +7,15 @@ const decrementEl = document.getElementById('decrement');
 const INCREMENT = 'increment';
 const DECREMENT = 'decrement';
 
-const increment = () =>{
+// action creator
+const increment = (value) =>{
   return { type: INCREMENT,
-    payload: 5,}
+    payload: value,}
 }
 
-const decrement = () =>{
+const decrement = (value) =>{
    return{ type: DECREMENT,
-    payload: 2,}
+    payload: value,}
 }
 
 // 1.// intial state
@@ -58,11 +59,11 @@ store.subscribe(render);
 
 // 4// button click listener
 incrementEl.addEventListener('click',()=>{
-    store.dispatch(increment())
+    store.dispatch(increment(5))
 })
 
 decrementEl.addEventListener('click',()=>{
-    store.dispatch(decrement())
+    store.dispatch(decrement(2))
 })
 
 
